@@ -14,10 +14,13 @@ class Phonebook
         ~Phonebook(void);
 
         void add(void);
-        void search(void);
-        void print(void);
+        void search();
+        void print(Contact contact);
 
         Contact get_contact(int index);
 };
 
+
+
 #endif
+

@@ -1,10 +1,12 @@
-SRC = Contact.cpp main.cpp
+SRC = Contact.cpp Phonebook.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+INCLUDE = 	-I ./includes 
+# CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic $(INCLUDE) 
+CPPFLAGS = $(INCLUDE) 
 
-NAME = my_awesome_phonebook
+NAME = my_phonebook
 
 all: $(NAME)
 
@@ -19,4 +21,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re'
+.PHONY: all clean fclean re
