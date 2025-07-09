@@ -8,6 +8,8 @@ class Phonebook
     private:
         Contact _contacts[8];
         int _index;
+        void _print_ui(Contact contact[8]);
+        void _calculate_padding(std::string &str);
     
     public:
         Phonebook(void);

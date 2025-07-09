@@ -3,8 +3,8 @@ OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
 INCLUDE = 	-I ./includes 
-# CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic $(INCLUDE) 
-CPPFLAGS = $(INCLUDE) 
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic $(INCLUDE) 
+# CPPFLAGS = $(INCLUDE) 
 
 NAME = my_phonebook
 

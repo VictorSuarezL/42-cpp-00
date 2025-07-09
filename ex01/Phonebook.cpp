@@ -3,12 +3,53 @@
 Phonebook::Phonebook(void)
 {
     this->_index = 0;
-    std::cout << "Welcome to Crappy! Created an empty phonebook for up to 8 contacts" << std::endl;
+    std::cout << "Welcome to worst Phonebook! Created an empty phonebook for up to 8 contacts" << std::endl;
 }
 
 Phonebook::~Phonebook(void)
 {
     std::cout << "See you soon!" << std::endl;
+}
+
+void Phonebook::_calculate_padding(std::string &str)
+{
+    if (str.size() > 10)
+        str = str.substr(0, 9) + ".";
+    else
+    {
+        while (str.size() < 10)
+            str = " " + str;
+    }
+}
+
+void Phonebook::_print_ui(Contact contact[8])
+{
+    int i;
+    std::string str;
+
+    std::cout << " ___________________________________________ " << std::endl;
+    std::cout << "|        Id|First Name| Last Name|  Nickname|" << std::endl;
+    std::cout << "|----------|----------|----------|----------|" << std::endl;
+    i = -1;
+    while (++i < 8 && contact[i].get_fname().size())
+    {
+        if (contact[i].get_fname().size())
+        {
+            str = std::to_string(i + 1);
+            _calculate_padding(str);
+            std::cout << "|" << str << "|";
+            str = contact[i].get_fname();
+            _calculate_padding(str);
+            std::cout << str << "|";
+            str = contact[i].get_lname();
+            _calculate_padding(str);
+            std::cout << str << "|";
+            str = contact[i].get_nickname();
+            _calculate_padding(str);
+            std::cout << str << "|" << std::endl;
+        }
+    }
+    std::cout << " ------------------------------------------- " << std::endl;
 }
 
 // void Phonebook::add(void)
