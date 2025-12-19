@@ -13,13 +13,7 @@ Phonebook::~Phonebook(void)
 
 void Phonebook::_calculate_padding(std::string &str)
 {
-    if (str.size() > 10)
-        str = str.substr(0, 9) + ".";
-    else
-    {
-        while (str.size() < 10)
-            str = " " + str;
-    }
+    str = col10(str);
 }
 
 void Phonebook::print(Contact contact)
@@ -43,10 +37,10 @@ void Phonebook::_print_ui(Contact contact[8])
     std::string str;
 
     std::cout << " ___________________________________________ " << std::endl;
-    std::cout << "|" << std::setw(10) << std::left << "Index"
-              << "|" << std::setw(10) << std::left << "First Name"
-              << "|" << std::setw(10) << std::left << "Last Name"
-              << "|" << std::setw(10) << std::left << "Nickname"
+    std::cout << "|" << std::setw(10) << std::right << "Index"
+              << "|" << std::setw(10) << std::right << "First Name"
+              << "|" << std::setw(10) << std::right << "Last Name"
+              << "|" << std::setw(10) << std::right << "Nickname"
               << "|" << std::endl;
     std::cout << "|----------|----------|----------|----------|" << std::endl;
     i = -1;
@@ -56,16 +50,16 @@ void Phonebook::_print_ui(Contact contact[8])
         {
             str = std::to_string(i + 1);
             _calculate_padding(str);
-            std::cout << "|" << std::setw(10) << std::left << str;
+            std::cout << "|" << str;
             str = contact[i].get_fname();
             _calculate_padding(str);
-            std::cout << "|" << std::setw(10) << std::left << str;
+            std::cout << "|" << str;
             str = contact[i].get_lname();
             _calculate_padding(str);
-            std::cout << "|" << std::setw(10) << std::left << str;
+            std::cout << "|" << str;
             str = contact[i].get_nickname();
             _calculate_padding(str);
-            std::cout << "|" << std::setw(10) << std::left << str << "|" << std::endl;
+            std::cout << "|" << str << "|" << std::endl;
         }
     }
     std::cout << " ------------------------------------------- " << std::endl;

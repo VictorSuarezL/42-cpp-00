@@ -1,4 +1,4 @@
-SRC = Contact.cpp Phonebook.cpp main.cpp
+SRC = Contact.cpp Phonebook_utils.cpp Phonebook.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
