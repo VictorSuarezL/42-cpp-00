@@ -32,3 +32,5 @@
 *.app
 .vscode/settings.json
 ex01/my_phonebook
+ex00/megaphone
+

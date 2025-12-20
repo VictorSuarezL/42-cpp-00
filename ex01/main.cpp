@@ -15,7 +15,6 @@ int main(void)
         }
         else if (str == "SEARCH")
         {
-            std::cout << "Hello!" << std::endl;
             phoneb.search();
         }
         if (std::cin.eof())
